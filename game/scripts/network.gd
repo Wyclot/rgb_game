@@ -37,7 +37,8 @@ func _ready():
  http.request_completed.connect(_completed)
  var configured=OS.get_environment("RUNEFORGE_API_URL")
  if configured!="":base=configured
- test_mode="--test-profiles" in OS.get_cmdline_user_args() or "--outage-game-check" in OS.get_cmdline_user_args() or "--network-smoke" in OS.get_cmdline_user_args() or "--managed-game-check" in OS.get_cmdline_user_args() or "--smoke" in OS.get_cmdline_user_args()
+ if OS.has_feature("web"):base=str(JavaScriptBridge.get_interface("window").location.origin)
+ test_mode="--web-qa" in OS.get_cmdline_user_args() or "--test-profiles" in OS.get_cmdline_user_args() or "--outage-game-check" in OS.get_cmdline_user_args() or "--network-smoke" in OS.get_cmdline_user_args() or "--managed-game-check" in OS.get_cmdline_user_args() or "--smoke" in OS.get_cmdline_user_args()
  if test_mode:profile_path="user://managed_test_profiles.json"
  if FileAccess.file_exists(profile_path):
   var stored=JSON.parse_string(FileAccess.get_file_as_string(profile_path))
@@ -45,7 +46,7 @@ func _ready():
  for arg in OS.get_cmdline_user_args():
   if arg.begins_with("--profile="):profile_slot=arg.trim_prefix("--profile=")
  for slot in ["A","B"]:
-  if not profiles.has(slot):profiles[slot]={"key":Crypto.new().generate_random_bytes(32).hex_encode(),"name":("Тест " if test_mode else "Игрок ")+slot}
+  if not profiles.has(slot):profiles[slot]={"key":Crypto.new().generate_random_bytes(32).hex_encode(),"name":(("Тест WASM " if test_mode else "WASM ") if OS.has_feature("web") else ("Тест " if test_mode else "Игрок "))+slot}
  save_profiles()
 
 func save_profiles():
@@ -53,6 +54,7 @@ func save_profiles():
  if file:
   file.store_string(JSON.stringify({"profiles":profiles,"active":profile_slot}));file.close()
   DirAccess.rename_absolute(profile_path+".tmp",profile_path)
+  if OS.has_feature("web"):JavaScriptBridge.force_fs_sync()
 
 func _process(delta):
  trial_pulse=maxf(0,trial_pulse-delta)

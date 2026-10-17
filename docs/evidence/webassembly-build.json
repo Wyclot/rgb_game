@@ -1,0 +1,7 @@
+{
+  "engine": "4.4.1.stable.official.49a5bc7b6",
+  "template_url": "https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz",
+  "threaded": false,
+  "wasm_sha256": "e4a43dbae28662b2a68f6136857a94db6695430901515800b9883f6327cb7116",
+  "wasm_bytes": 43699190
+}

@@ -1,0 +1,25 @@
+{
+  "test": "HTTP proxy + real RGB (not visual/browser QA)",
+  "variant": "webassembly",
+  "network": "regtest",
+  "mode": "real",
+  "serial": 7,
+  "asset_id": "rgb:775J6b1O-HGT7l~o-Hebi4d9-s~aJgrz-dxnXAkr-s3C86bs",
+  "txid": "98ff1e123075649d79b7155df2944546727156f7a1b99cc08cd2608add7404d2",
+  "player_a": "0c7cbfeb-0059-41e7-9239-487347275f17",
+  "player_b": "e3655861-55c4-4546-8ca9-de70a6be7bc8",
+  "checks": [
+    "server_victory",
+    "one_reward",
+    "real_UDA",
+    "equip_52",
+    "foreign_equip_rejected",
+    "forged_asset_id_rejected",
+    "idempotent_transfer",
+    "double_transfer_rejected",
+    "real_A_to_B",
+    "same_asset_id",
+    "sender_revoked",
+    "recipient_equipped"
+  ]
+}

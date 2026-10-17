@@ -90,6 +90,8 @@ func _ready():
  net.game = self
  add_child(net)
  build_world()
+ if OS.has_feature("web") and "--web-qa" in OS.get_cmdline_user_args():
+  var qa=Node.new();qa.set_script(load("res://scripts/web_qa.gd"));qa.game=self;add_child(qa)
  smoke = "--verify-sword4" in OS.get_cmdline_user_args() or "--outage-game-check" in OS.get_cmdline_user_args() or "--managed-game-check" in OS.get_cmdline_user_args() or "--smoke" in OS.get_cmdline_user_args() or "--network-smoke" in OS.get_cmdline_user_args()
  if "--smoke" in OS.get_cmdline_user_args():
   run_smoke.call_deferred()
@@ -398,6 +400,7 @@ func save_game(path=SAVE_PATH):
  if file:
   file.store_string(JSON.stringify(data));file.close()
   DirAccess.rename_absolute(path+".tmp",path)
+  if OS.has_feature("web"):JavaScriptBridge.force_fs_sync()
 
 func load_game(path=SAVE_PATH) -> bool:
  if not FileAccess.file_exists(path):announce("No saved covenant yet. Choose Begin Journey.",3);return false
@@ -786,3 +789,9 @@ func run_sword4_check():
  net.switch_profile("A");await wait_network()
  print("SWORD4_GODOT_PASS: ordinary A, same asset, 52 damage, no test recipients, settled status")
  get_tree().quit()
+
+func quit_game():
+ if menu_started:save_game()
+ if OS.has_feature("web"):
+  state="menu";overlay="";announce("Прогресс сохранён. Можно закрыть вкладку.",5)
+ else:get_tree().quit()

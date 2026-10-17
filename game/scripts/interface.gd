@@ -83,7 +83,7 @@ func draw_menu():
  button(Rect2(140,450,300,50),"Begin Journey",func():game.start(false),true)
  button(Rect2(140,512,300,46),"Continue",func():game.start(true),false,FileAccess.file_exists(game.SAVE_PATH))
  button(Rect2(454,450,180,50),"Settings",func():game.state="play";game.overlay="settings")
- button(Rect2(454,512,180,46),"Quit",func():get_tree().quit())
+ button(Rect2(454,512,180,46),"Quit",func():game.quit_game())
  label_at(Vector2(140,657),"CHAPTER I   /   THE HOLLOW CRYPT",14,MUTED)
  panel(Rect2(855,160,290,380),Color("57615f"))
  icon("legendary",Rect2(925,210,148,148))
@@ -177,7 +177,7 @@ func draw_pause():
  button(Rect2(440,282,400,46),"Resume journey",func():game.overlay="",true)
  button(Rect2(440,341,400,46),"Settings",func():game.overlay="settings")
  button(Rect2(440,400,400,46),"Save & return to title",func():game.save_game();game.overlay="";game.state="menu")
- button(Rect2(440,459,400,46),"Save & quit",func():game.save_game();get_tree().quit())
+ button(Rect2(440,459,400,46),"Save & quit",func():game.quit_game())
 
 func draw_settings():
  panel(Rect2(400,165,480,390),Color("65716c"))
