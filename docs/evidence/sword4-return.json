@@ -1,0 +1,34 @@
+{
+  "mode": "real",
+  "network": "regtest",
+  "serial": 4,
+  "asset_id": "rgb:HMuDmE2i-aknsETo-4mmIZrS-hrK12HK-Qn_Yi1F-kY5jYa8",
+  "source_profile": {
+    "id": "fbb6f7f7-31dc-4275-ba03-856ea737add6",
+    "name": "Тест A"
+  },
+  "destination_profile": {
+    "id": "e2bc20f0-4fc2-49f4-8363-799560e64378",
+    "name": "Игрок A"
+  },
+  "operation_id": "c6faadf8-db7c-417d-b221-a7804c4af464",
+  "txid": "0e3158ba611f278d70ca79057b1a933846d1a2bed1cd36dc0ac6169d89192f55",
+  "state": "settled",
+  "ordinary_A_equipped": true,
+  "damage": 52,
+  "test_A_equip_rejected": true,
+  "source_balance": {
+    "settled": 0,
+    "future": 0,
+    "spendable": 0
+  },
+  "destination_balance": {
+    "settled": 1,
+    "future": 1,
+    "spendable": 1
+  },
+  "matching_issuances": 1,
+  "source_wallet_fingerprint": "32a4f2d5",
+  "destination_wallet_fingerprint": "0a3ae27d",
+  "bilateral_settlement": true
+}

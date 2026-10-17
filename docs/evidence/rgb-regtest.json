@@ -1,0 +1,30 @@
+{
+  "mode": "real",
+  "network": "regtest",
+  "library": "rgb-lib==0.3.0b7",
+  "assets": [
+    {
+      "category": "NIA",
+      "asset_id": "rgb:qPIw4czO-9UhYo8H-SbWSRU_-3cSyGSD-rYICspk-xvHhj2M",
+      "txid": "016205567f575d5a0ed1a19cfe6916e2f6199c6d9c6659cc1985eef26c6867be",
+      "receiver_settled": 25,
+      "issuer_settled": 999975,
+      "receiver_states": [
+        "SETTLED"
+      ],
+      "same_key_replayed": true
+    },
+    {
+      "category": "UDA",
+      "asset_id": "rgb:9AYdTO2s-dUMwBGD-2wfSLq0-a8WjbSq-r2qbADM-QiXjUAg",
+      "txid": "20e849686dc27c2b6695808216662683335351406e04e4867fde6f9d4e221080",
+      "receiver_settled": 1,
+      "issuer_settled": 0,
+      "receiver_states": [
+        "SETTLED"
+      ],
+      "same_key_replayed": true
+    }
+  ],
+  "block_height": 131
+}

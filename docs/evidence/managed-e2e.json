@@ -1,0 +1,49 @@
+{
+  "mode": "real",
+  "network": "regtest",
+  "library": "rgb-lib==0.3.0b7",
+  "checks": [
+    "separate_wallets",
+    "authoritative_victory",
+    "single_UDA",
+    "equip_52_ATK",
+    "real_A_to_B",
+    "same_instance_and_asset",
+    "sender_revoked",
+    "recipient_equipped",
+    "replay_idempotent",
+    "double_transfer_rejected",
+    "asset_id_claim_rejected",
+    "native_issuance_crash_recovered",
+    "native_send_crash_recovered"
+  ],
+  "serial": 2,
+  "asset_id": "rgb:_JM2GyG4-1OZ~XhD-hTel6CC-JmQtC8m-C6uLPAc-pU_t59g",
+  "sender_wallet_fingerprint": "ba35553c",
+  "recipient_wallet_fingerprint": "1d729878",
+  "matching_issuances": 1,
+  "award_txid": "9b80131096c7114bace09f6f3ca6ae8e3c7ce7f7875dd8bc87e546efc616273b",
+  "transfer_txid": "95a7dc406ffccbab9fe3169d382c2bd4aa57c439b6a9f7bddf0f956b156964d7",
+  "sender_id": "44f4f163-c9cd-492c-9109-87edda64818e",
+  "recipient_id": "840aab54-c242-4c97-aafc-95480f6acf38",
+  "sender_settled": 0,
+  "recipient_settled": 1,
+  "owner_id": "840aab54-c242-4c97-aafc-95480f6acf38",
+  "damage": 52,
+  "issuance_events": [
+    "earned",
+    "issuing",
+    "preparing",
+    "signing",
+    "waiting_counterparty",
+    "waiting_confirmations",
+    "settled"
+  ],
+  "transfer_events": [
+    "requested",
+    "preparing",
+    "signing",
+    "waiting_counterparty",
+    "settled"
+  ]
+}

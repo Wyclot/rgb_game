@@ -1,0 +1,51 @@
+name: runeforge
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: runeforge
+      POSTGRES_PASSWORD: runeforge_local_only
+      POSTGRES_DB: runeforge
+    ports: ["127.0.0.1:55432:5432"]
+    volumes: ["postgres_data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U runeforge"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  api:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    profiles: ["app"]
+    environment:
+      DATABASE_URL: postgresql+psycopg://runeforge:runeforge_local_only@postgres:5432/runeforge
+      RGB_MODE: real
+    ports: ["127.0.0.1:8000:8000"]
+    depends_on:
+      postgres: {condition: service_healthy}
+  bitcoind:
+    image: registry.gitlab.com/hashbeam/docker/bitcoind:30.2
+    platform: linux/amd64
+    profiles: ["rgb"]
+    command: "-fallbackfee=0.0002"
+    ports: ["127.0.0.1:18543:18443"]
+    volumes: ["bitcoin_data:/srv/app/.bitcoin"]
+  electrs:
+    image: registry.gitlab.com/hashbeam/docker/electrs:0.11.0
+    platform: linux/amd64
+    profiles: ["rgb"]
+    ports: ["127.0.0.1:51001:50001"]
+    depends_on: [bitcoind]
+    volumes: ["electrs_data:/srv/app/db"]
+  proxy:
+    image: ghcr.io/rgb-tools/rgb-proxy-server:0.3.0
+    platform: linux/amd64
+    profiles: ["rgb"]
+    ports: ["127.0.0.1:3100:3000"]
+    volumes: ["proxy_data:/srv/app/data"]
+volumes:
+  postgres_data:
+  bitcoin_data:
+  electrs_data:
+  proxy_data:

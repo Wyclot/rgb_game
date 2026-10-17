@@ -1,0 +1,7 @@
+*
+!backend/
+!backend/**
+!docker/
+!docker/**
+**/__pycache__
+**/.pytest_cache

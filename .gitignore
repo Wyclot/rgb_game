@@ -1,0 +1,11 @@
+.venv/
+tools/
+game/.godot/
+__pycache__/
+.pytest_cache/
+.env
+.state/
+*.db
+*.db-*
+*.log
+.DS_Store

@@ -1,0 +1,13 @@
+{
+  "asset_id": "rgb:O93qCskq-1ybzPSJ-EGYq~JB-7jKPEEh-WqsWviH-lOuhAeI",
+  "checks": [
+    "server_trial",
+    "real_wallet_delivery",
+    "sender_equipped",
+    "campaign_attack_52",
+    "reservation_revokes",
+    "recipient_equipped"
+  ],
+  "damage": 52,
+  "serial": 3
+}

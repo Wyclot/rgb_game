@@ -1,0 +1,12 @@
+{
+  "asset_id": "rgb:HMuDmE2i-aknsETo-4mmIZrS-hrK12HK-Qn_Yi1F-kY5jYa8",
+  "damage": 52,
+  "is_test": false,
+  "message": "Передача завершена. Меч #4 получен игроком «Игрок A».",
+  "profile_id": "e2bc20f0-4fc2-49f4-8363-799560e64378",
+  "profile_name": "Игрок A",
+  "recipient_ids": [
+    "56c4bd65-0144-4c06-9d1a-763fdca7f57e"
+  ],
+  "serial": 4
+}

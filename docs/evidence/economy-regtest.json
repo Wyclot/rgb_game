@@ -1,0 +1,16 @@
+{
+  "mode": "real",
+  "network": "regtest",
+  "profile_id": "07c058a9-7ed6-49e7-950d-21f4d44d800c",
+  "session_id": "b5649321-d1a6-41a0-bbc1-bc527ec10c16",
+  "reward_id": "dbc515d6-bb16-47ae-a871-acd1045dc75b",
+  "asset_id": "rgb:EX4y5bpt-iXxcOko-EH99OuB-FLqXUiC-CkxoD9_-v8UmVlo",
+  "transfer_id": "5a944519-9268-47ea-9cfd-e71c85d4defb",
+  "txid": "28f6d4e81e3110a4f3041ba120a795ae93ec0472d8f0725117249442f279c758",
+  "state": "settled",
+  "receiver_settled": 1,
+  "issuance_idempotent": true,
+  "withdrawal_idempotent": true,
+  "equip_blocked_after_reservation": true,
+  "equippable_after_withdrawal": false
+}

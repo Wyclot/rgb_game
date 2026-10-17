@@ -1,0 +1,11 @@
+{
+  "mode": "real",
+  "network": "regtest",
+  "checks": [
+    "electrs_offline_blocks_use_and_transfer",
+    "electrs_restored_real_wallet_rechecked",
+    "proxy_offline_blocks_use_and_transfer",
+    "proxy_restored_real_wallet_rechecked",
+    "godot_backend_offline_revokes_52_damage"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "package": "rgb-lib",
+  "version": "0.3.0b7",
+  "signatures": {
+    "go_online": "(self, online_options: 'OnlineOptions') -> 'Online'",
+    "issue_asset_nia": "(self, ticker: 'str', name: 'str', precision: 'int', amounts: 'typing.List[int]') -> 'AssetNia'",
+    "issue_asset_uda": "(self, ticker: 'str', name: 'str', details: 'typing.Optional[str]', precision: 'int', media_file_path: 'typing.Optional[str]', attachments_file_paths: 'typing.List[str]') -> 'AssetUda'",
+    "blind_receive": "(self, asset_id: 'typing.Optional[str]', assignment: 'Assignment', expiration_timestamp: 'int', transport_endpoints: 'typing.List[str]', min_confirmations: 'int') -> 'ReceiveData'",
+    "send": "(self, online: 'Online', recipient_map: 'dict[str, typing.List[Recipient]]', donation: 'bool', fee_rate: 'int', min_confirmations: 'int', expiration_timestamp: 'int') -> 'OperationResult'",
+    "list_transfers": "(self, asset_id: 'typing.Optional[str]') -> 'typing.List[Transfer]'",
+    "refresh": "(self, online: 'Online', asset_id: 'typing.Optional[str]', filter: 'typing.List[RefreshFilter]', skip_sync: 'bool') -> 'dict[int, RefreshedTransfer]'"
+  }
+}
