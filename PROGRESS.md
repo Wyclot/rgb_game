@@ -101,3 +101,12 @@ This revision supersedes the older mock-default/manual-operator delivery describ
 - Client selection retains recipient UUID rather than a changing list index; profile tabs use actual profile names and the active profile ID is visible. Transfer feedback now follows the recorded operation status and becomes “Передача завершена”; switching profiles clears stale feedback.
 - 23 backend tests passed on SQLite and PostgreSQL, including hidden test recipients, server rejection of a crafted cross-purpose transfer and purpose-safe registration replay. Godot import/campaign smoke passed.
 - Actual Godot `--verify-sword4` passed using ordinary `managed_profiles.json` (not test profiles): ordinary A identity, same asset, 52 damage, only ordinary B in recipient choices, completed transfer message after polling, and clearing messages on profile switch. Evidence: `docs/evidence/sword4-return.json`, `sword4-godot.json`, `sword4-ordinary-A.png`.
+
+
+## Browser branch feature/javascript — 2026-10-17
+
+Implemented JavaScript / Canvas 2D, same-origin API proxy, separate JS A/B browser profiles, real managed-item workflow and one-command launcher. Existing native campaign and RGB backend preserved.
+
+Validated: 23 backend tests; 6 proxy tests; real HTTP trial/UDA/equipment/A→B transfer/sender revocation/recipient equipment (see docs/evidence/web-api-javascript.json). 11 JavaScript unit tests pass.
+
+Browser QA is partial, not complete: initial Chromium launch succeeded; full/manual browser verification was blocked by denied Computer Use access. Browser tests stopped, no workaround attempted. See docs/WEB.md for exact observations and remaining checks.

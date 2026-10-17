@@ -1,0 +1,28 @@
+{
+  "status": "partial_browser_QA_not_full_pass",
+  "variant": "javascript",
+  "network": "regtest",
+  "mode": "real",
+  "serial": 5,
+  "asset_id": "rgb:xp39J_S_-UFAiIIw-Y_lJkoc-iD2bkDG-ALymKVO-iPX5ndw",
+  "txid": "780b1cf390955cd0b4e5b59f53c4ce80cdf69687c234c4cf49216652cdd68b31",
+  "observed": [
+    "browser_launch",
+    "keyboard_movement",
+    "dodge",
+    "save_reload",
+    "inventory",
+    "server_victory",
+    "real_UDA_received",
+    "equipped_damage_52",
+    "offline_lease_revoked",
+    "confirmation_dialog_transfer_submitted",
+    "worker_settled_to_test_JS_B_verified_by_database"
+  ],
+  "not_verified": [
+    "recipient_equipment_in_browser",
+    "manual_UI",
+    "final_minor_UI_adjustments_in_browser"
+  ],
+  "blocker": "Manual Browser Use denied by user; browser automation stopped. Separate HTTP integration is recorded in web-api-javascript.json."
+}
